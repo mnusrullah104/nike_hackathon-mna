@@ -1,5 +1,3 @@
-"use client";
-
 import { client } from "@/sanity/lib/client";
 import { Product } from "@/types/products";
 import { groq } from "next-sanity";
@@ -38,7 +36,7 @@ export async function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug.current }));
 }
 
-// Page Component
+// ✅ This remains a server component (No "use client"; at the top)
 export default async function ProductPage({ params }: ProductPageProps) {
   if (!params || !params.slug) {
     return notFound();
