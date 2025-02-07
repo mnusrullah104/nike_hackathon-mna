@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { Heart, ShoppingBag, Menu, X, Search } from 'lucide-react';
+import { Heart, Menu, X, Search } from 'lucide-react';
 import Image from 'next/image';
 import Frame from "../../public/header/logo.png"
 import Logo from "../../public/header/nike logo.png"
@@ -32,7 +32,7 @@ export default function Nav() {
   return (
     <header>
       {/* Top bar */}
-      <div className="bg-[#fafafa]  flex justify-between items-center px-8 py-2 text-[12px] font-medium text-gray-700">
+      <div className="bg-[#fafafa]  flex justify-between items-center px-8 py-2 text-[14 px] font-medium text-gray-700">
         <div className="flex items-center">
           <Link href="/"><Image src={Frame} alt={''} width={24} height={24} /> </Link>
         </div>

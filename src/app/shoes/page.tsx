@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { allproducts, four } from "@/sanity/lib/queries";
+import {  four } from "@/sanity/lib/queries";
 import { Product } from "@/types/products";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";

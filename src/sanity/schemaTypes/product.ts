@@ -1,6 +1,7 @@
 // schemas/product.ts
 
-export default {
+const productSchema = {
+  // schema details
   name: 'product',
   title: 'Product',
   type: 'document',
@@ -77,6 +78,7 @@ export default {
     
   ],
 };
+export default productSchema;
 
 
 
@@ -108,12 +110,6 @@ export default {
 
 
 
-
-
-
-// type RuleType = {
-//   required: () => RuleType
-// }
 
 
 // export const productSchema = {
