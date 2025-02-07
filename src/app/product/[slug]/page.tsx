@@ -1,8 +1,11 @@
+"use client";
+
 import { client } from "@/sanity/lib/client";
 import { Product } from "@/types/products";
 import { groq } from "next-sanity";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
+import { notFound } from "next/navigation";
 
 interface ProductPageProps {
   params: { slug: string };
@@ -32,11 +35,15 @@ export async function generateStaticParams() {
     }`
   );
 
-  return products.map((product) => ({ params: { slug: product.slug.current } }));
+  return products.map((product) => ({ slug: product.slug.current }));
 }
 
 // Page Component
-const ProductPage = async ({ params }: ProductPageProps) => {
+export default async function ProductPage({ params }: ProductPageProps) {
+  if (!params || !params.slug) {
+    return notFound();
+  }
+
   const product = await getProduct(params.slug);
 
   if (!product) {
@@ -89,6 +96,4 @@ const ProductPage = async ({ params }: ProductPageProps) => {
       </div>
     </div>
   );
-};
-
-export default ProductPage;
+}
