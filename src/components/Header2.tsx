@@ -15,9 +15,9 @@ export default function Nav() {
 
   const navLinks = [
     { href: "/all-products", label: "New & Featured" },
-    { href: "/all-products", label: "Men" },
+    { href: "/men", label: "Men" },
     { href: "/all-products", label: "Women" },
-    { href: "/all-products", label: "Kids" },
+    { href: "/kids", label: "Kids" },
     { href: "/all-products", label: "Sale" },
     { href: "/all-products", label: "SNKRS" }
   ];
@@ -26,7 +26,7 @@ export default function Nav() {
     { href: "/find-store", label: "Find a Store" },
     { href: "/contact-us", label: "Help" },
     { href: "/sign-up", label: "Join Us" },
-    { href: "/sign-in", label: "Sign In" }
+    { href: "/login", label: "Sign In" }
   ];
 
   return (

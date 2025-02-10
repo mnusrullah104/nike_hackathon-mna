@@ -35,7 +35,7 @@ const AllProducts = () => {
     Swal.fire({
       position: "top-end",
       icon: "success",
-      title: `${product.productName} added to cart`,
+      title: `${product.name} added to cart`,
       showConfirmButton: false,
       timer: 1000,
     });
@@ -63,7 +63,7 @@ const AllProducts = () => {
                 />
               )}
               <h1 className="text-lg font-semibold text-blue-700 mt-4">
-                {product.productName}
+                {product.name}
               </h1>
               <p className="text-gray-900 mt-2">
                 {product.price ? `$${product.price}` : "Price not available"}

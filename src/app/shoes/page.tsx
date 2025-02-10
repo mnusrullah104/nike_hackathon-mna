@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import {  four } from "@/sanity/lib/queries";
+import { sixProductsQuery } from "@/sanity/lib/queries";
 import { Product } from "@/types/products";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -14,7 +14,7 @@ const SHOES = () => {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const fetchedProducts: Product[] = await client.fetch(four);
+        const fetchedProducts: Product[] = await client.fetch(sixProductsQuery);
         setProducts(fetchedProducts);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -32,7 +32,7 @@ const SHOES = () => {
     Swal.fire({
       position: 'top-end',
       icon: 'success',
-      title: `${product.productName} added to art`,
+      title: `${product.name} added to art`,
       showConfirmButton: false,
       timer: 1000
     })
@@ -61,7 +61,7 @@ const SHOES = () => {
                 />
               )}
               <h1 className="text-lg font-semibold text-blue-700 mt-4">
-                {product.productName}
+                {product.name}
               </h1>
               <p className="text-gray-900 mt-2   font-medium tsm:mr-5">
                 {product.price ? `$${product.price}` : "Price not available"}

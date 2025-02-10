@@ -4,8 +4,6 @@ import { groq } from "next-sanity";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { notFound } from "next/navigation";
-import { GetStaticPropsContext } from 'next';
-
 interface ProductPageProps {
   params: { slug: string };
 }
@@ -57,7 +55,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           {product.image && (
             <Image
               src={urlFor(product.image).url() as string}
-              alt={product.productName || "Product image"}
+              alt={product.name || "Product image"}
               width={450}
               height={400}
               className="object-contain rounded-lg shadow-md"
@@ -68,7 +66,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         {/* Product Details */}
         <div className="flex-1 md:pl-5 pt-5 md:pt-0 flex flex-col justify-center ml-5">
           <h2 className="font-poppins text-3xl md:text-4xl font-medium text-gray-900">
-            {product.productName}
+            {product.name}
           </h2>
           <p className="font-poppins text-sm text-gray-900 my-2 leading-5">
             {product.description}
@@ -83,7 +81,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               data-item-id={product._id}
               data-item-price={product.price}
               data-item-image={product.image ? urlFor(product.image).url() : ""}
-              data-item-name={product.productName}
+              data-item-name={product.name}
               data-item-description={product.description}
               data-item-url={`/product/${product.slug.current}`}
             >
