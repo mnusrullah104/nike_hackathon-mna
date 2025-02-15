@@ -71,7 +71,7 @@ export default function SaleProducts() {
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-sm sm:text-base font-semibold">Shiny Sale</span>
+              <span className="text-sm sm:text-base font-semibold">Upto 50% OFF</span>
             </div>
             
           </div>

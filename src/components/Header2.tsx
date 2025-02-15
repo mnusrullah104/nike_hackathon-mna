@@ -32,7 +32,7 @@ export default function Nav() {
   return (
     <header>
       {/* Top bar */}
-      <div className="bg-[#fafafa]  flex justify-between items-center px-8 py-2 text-[14 px] font-medium text-gray-700">
+      <div className="bg-[#fafafa]  flex justify-between items-center px-8 py-2 text-[14px] font-medirm text-gray-700">
         <div className="flex items-center">
           <Link href="/"><Image src={Frame} alt={''} width={24} height={24} /> </Link>
         </div>
@@ -66,7 +66,7 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-blue-900 hover:text-blue-500   whitespace-nowrap"
+              className="text-blue-900 hover:text-blue-600   whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -86,7 +86,7 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="/cart" >
+            <a href="/wishlist" >
               <Heart className="text-blue-900 w-[24px] h-[24px] cursor-pointer hover:text-black" />
             </a>
             <a href="/cart">

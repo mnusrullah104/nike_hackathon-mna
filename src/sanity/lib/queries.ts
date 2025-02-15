@@ -1,7 +1,7 @@
 import { groq } from "next-sanity"
 
 export const allproducts=groq `*[_type=="product"]`;
-export const sixProductsQuery = groq`*[_type == "product"][0..5]`;
+export const bestProductsQuery = groq`*[_type == "product"][0..7]`;
 
 
 export const allProductsQuery = groq`*[_type == "product"]`;

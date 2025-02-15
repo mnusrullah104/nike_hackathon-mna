@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { sixProductsQuery } from "@/sanity/lib/queries";
+import { bestProductsQuery } from "@/sanity/lib/queries";
 import { Product } from "@/types/products";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -14,7 +14,7 @@ const SHOES = () => {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const fetchedProducts: Product[] = await client.fetch(sixProductsQuery);
+        const fetchedProducts: Product[] = await client.fetch(bestProductsQuery);
         setProducts(fetchedProducts);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -67,7 +67,7 @@ const SHOES = () => {
                 {product.price ? `$${product.price}` : "Price not available"}
               </p>
               <button
-                className="bg-gradient-to-r from-blue-500 to-purple-700 font-semiboldbold shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-out text-white px-4 py-2 rounded-lg mt-4"
+                className="bg-gradient-to-r from-purple-700 to-blue-500 font-semiboldbold shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-out text-white px-4 py-2 rounded-lg mt-4"
                 onClick={(e) => handleAddToCart(e, product)}
               >
                 Add to Cart 

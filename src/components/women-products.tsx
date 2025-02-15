@@ -71,7 +71,7 @@ export default function WomenProducts() {
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-sm sm:text-base font-semibold">Best Of Jordan</span>
+              <span className="text-sm sm:text-base font-semibold">Best Women Shoes</span>
             </div>
             
           </div>

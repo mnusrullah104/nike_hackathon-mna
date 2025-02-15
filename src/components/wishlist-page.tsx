@@ -104,7 +104,7 @@ export default function WishlistPage() {
             <Button
               variant="outline"
               className="h-12 px-12 rounded-sm border-black hover:bg-black hover:text-white transition-colors"
-              onClick={() => router.push("products")}
+              onClick={() => router.push("all-products")}
             >
               See All
             </Button>
