@@ -1,14 +1,11 @@
 "use client";
-
 import Link from "next/link";
-import { allproducts } from "@/sanity/lib/queries";
+import { allproducts} from "@/sanity/lib/queries";
 import { Product } from "@/types/products";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { client } from "@/sanity/lib/client"; // Ensure client is properly imported
 import { urlFor } from "@/sanity/lib/image"; // Import urlFor function
-import { addToCart } from "../actions/actions"; // Import addToCart function
-import Swal from "sweetalert2"; // Import SweetAlert for notifications
 
 const AllProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -26,57 +23,31 @@ const AllProducts = () => {
     fetchProducts();
   }, []);
 
-  // Handle Add to Cart
-  const handleAddToCart = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    product: Product
-  ) => {
-    e.preventDefault();
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: `${product.name} added to cart`,
-      showConfirmButton: false,
-      timer: 1000,
-    });
-    addToCart(product);
-  };
-
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6 text-center">Best of Air Max</h1>
+        <h1 className="text-2xl font-bold mb-6 text-center">Best of Air Max</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <div
-            key={product._id}
-            className="p-4 border rounded-lg shadow-md hover:shadow-lg transition duration-200 ease-in-out"
-          >
-            <Link href={`/product/${product.slug.current}`}>
-              {product.image && (
+          <div key={product._id} className=" p-4 border rounded-lg shadow-md hover:shadow-lg transition duration-200 ease-in-out">
+           <Link href={`/product/${product.slug.current}`}>
+           {product.image &&(
                 <Image
-                  src={urlFor(product.image).url()}
-                  alt="image"
-                  width={300}
-                  height={300}
-                  className="w-full h-48 object-cover rounded-lg"
+                src={urlFor(product.image).url()}
+                alt="image"
+                width={300}
+                height={300}
+                className="w-full h-48  object-cover rounded-lg"
                 />
-              )}
-              <h1 className="text-lg font-semibold text-blue-700 mt-4">
-                {product.name}
-              </h1>
-              <p className="text-gray-900 mt-2">
-                {product.price ? `$${product.price}` : "Price not available"}
-              </p>
-            </Link>
-
-            {/* Add to Cart Button */}
-            <button
-              className="bg-gradient-to-r from-blue-500 to-purple-700 font-semibold shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-out text-white px-4 py-2 rounded-lg mt-4 w-full"
-              onClick={(e) => handleAddToCart(e, product)}
-            >
-              Add to Cart
-            </button>
+           )}
+           <h1 className="text-lg font-semibold text-blue-700 mt-4">
+             {product.name}
+             </h1>
+          <p className="text-gray-900 mt-2">
+             {product.price? `$${product.price}` : "Price not available"}
+          </p>
+          {/* <p className="text-sm text-gray-700 mt-2">{product.description}</p> */}
+          </Link> 
           </div>
         ))}
       </div>
@@ -85,6 +56,8 @@ const AllProducts = () => {
 };
 
 export default AllProducts;
+
+
 
 
 

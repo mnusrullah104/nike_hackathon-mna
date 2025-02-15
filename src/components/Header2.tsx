@@ -13,13 +13,13 @@ export default function Nav() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const navLinks = [
-    { href: "/all-products", label: "New & Featured" },
+  const navLinks = [  
+    { href: "/newFeatured", label: "New & Featured" },
     { href: "/men", label: "Men" },
-    { href: "/all-products", label: "Women" },
+    { href: "/women", label: "Women" },
     { href: "/kids", label: "Kids" },
-    { href: "/all-products", label: "Sale" },
-    { href: "/all-products", label: "SNKRS" }
+    { href: "/sale", label: "Sale" },
+    { href: "/snkr", label: "SNKRS" }
   ];
 
   const topBarLinks = [
@@ -129,8 +129,7 @@ export default function Nav() {
                   />
                   <Search className="absolute right-3 top-2.5 text-gray-500" />
                 </div>
-
-                {/* Mobile Navigation Links */}
+              {/* Mobile Navigation Links */}
                 <nav className="flex flex-col space-y-4">
                   {navLinks.map((link) => (
                     <a

@@ -2,16 +2,16 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Heart, Eye } from 'lucide-react';
-import { Button } from './Button';
+import { Button } from '@/components/ui/button';
 import { client } from '@/sanity/lib/client';
-import { kidsProductsQuery } from '@/sanity/lib/queries';
+import { saleProductsQuery } from '@/sanity/lib/queries';
 import { Product } from '@/types/products';
 import { urlFor } from '@/sanity/lib/image';
 import Link from 'next/link';
 import { addToCart, addToWishlist, getWishlistItems, removeFromWishlist } from '@/app/actions/actions';
 import toast from 'react-hot-toast';
 
-export default function KidsProducts() {
+export default function SaleProducts() {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
   const [wishlist, setWishlist] = useState<Product[]>([]);
@@ -19,7 +19,7 @@ export default function KidsProducts() {
 
   useEffect(() => {
     async function fetchProducts() {
-      const products: Product[] = await client.fetch(kidsProductsQuery);
+      const products: Product[] = await client.fetch(saleProductsQuery);
       setAllProducts(products);
       setDisplayedProducts(products.slice(0, 8));
       setShowMoreVisible(products.length > 8);
@@ -71,7 +71,7 @@ export default function KidsProducts() {
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-sm sm:text-base font-semibold">Best Of Jordan</span>
+              <span className="text-sm sm:text-base font-semibold">Shiny Sale</span>
             </div>
             
           </div>

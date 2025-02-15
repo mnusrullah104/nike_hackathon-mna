@@ -3,12 +3,14 @@ import GearUpSection from "../components/GearUpSection";
 import DontMissSection from "../components/DontMissSection";
 import EssentialsSection from "../components/EssentialsSection";
 import Navigation from "../components/Navigation";
+import MenBanner from "@/components/man-feature";
 
 
 export default function Home() {
   return (
     <div>
       <Hero />
+      <MenBanner/>
       <GearUpSection />
       <DontMissSection />
       <EssentialsSection />

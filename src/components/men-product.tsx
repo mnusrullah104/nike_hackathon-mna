@@ -146,7 +146,7 @@ export default function MenProducts() {
                   </div>
                   <div className="flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pb-2 sm:pb-3">
                       <Button 
-                        className="bg-black  text-white hover:bg-black/90 h-8 sm:h-10 rounded-[4px] text-sm sm:text-base font-medium px-3 sm:px-4" 
+                        className="bg-gradient-to-r from-purple-500 to-sky-500  text-white hover:bg-black/90 h-8 sm:h-10 rounded-[4px] text-sm sm:text-base font-medium px-3 sm:px-4" 
                         onClick={(e) => handleAddToCart(e, product)}
                       >
                         Add To Cart
