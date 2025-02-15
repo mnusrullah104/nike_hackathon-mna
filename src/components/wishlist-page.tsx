@@ -1,13 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Eye, Trash2 } from "lucide-react";
 import { Button } from "@/components/Button";
 import { inter, poppins } from "@/app/ui/font";
 import { Product } from "@/types/products";
-import { urlFor } from "@/sanity/lib/image";
 import { client } from "@/sanity/lib/client";
 import { allproducts as allProductsQuery } from "../sanity/lib/queries";
 import toast from "react-hot-toast";
